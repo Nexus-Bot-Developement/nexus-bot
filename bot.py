@@ -1,6 +1,7 @@
-# Créé par Lulu-76450 et l'IA (GPT ou Gemini)
-# Sous license CC-BY, voir le fichier LICENSE
-# (c) Lulu-76450 2025
+# Créé par Nexus Bot Developement et l'IA (GPT ou Gemini)
+# Sous license, voir le fichier LICENSE.
+# (c) Nexus Bot Developement 2025
+
 import discord
 from discord.ext import commands
 import random
