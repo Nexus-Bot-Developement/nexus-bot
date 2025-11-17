@@ -1,5 +1,5 @@
 
-# Nexus Bot 🎮🤖
+# Nexus Bot
 
 
 Nexus Bot est un **bot Discord fun et personnalisable**, conçu pour ajouter des commandes interactives et ludiques à votre serveur. Que vous soyez un administrateur à la recherche d’outils pour animer votre communauté ou un développeur souhaitant contribuer, Nexus Bot est peut-être fait pour vous !
@@ -29,7 +29,7 @@ Vous pouvez utiliser l'instance offerte [ici](https://discord.com/oauth2/authori
 ### Étapes
 1. **Clonez le dépôt** :
    ```bash
-   git clone https://github.com/Creatif-France-Games/nexus-bot.git
+   git clone https://github.com/Nexus-Bot-Developement/nexus-bot.git
    cd nexus-bot
    ```
 
@@ -109,11 +109,14 @@ Si vous savez un peu coder, c'est très gentil à vous de contribuer. Voici les 
 - À chaque ajout ou modification que vous faites, faites un commentaire afin de voir que c'est vous.
 - Testez vos modifications avant de soumettre.
 
+Avec ca, vous pouvez faire une Pull request.
+
+N'hésitez pas a nous contacter par e-mail pour rejoindre l'organisation et contribuer au développement.
 ---
 
 ## 💬 Communauté
 
-- **Besoin d’aide** ? Ouvrez une [issue](https://github.com/Creatif-France-Games/nexus-bot/issues) sur GitHub.
+- **Besoin d’aide** ? Ouvrez une [issue](https://github.com/Nexus-Bot-Developement/nexus-bot/issues) sur GitHub.
 - **Envie de discuter** ? Rejoignez notre [serveur Discord](discord.gg/Zzcb9j8BTJ).
 
 ---
@@ -132,7 +135,7 @@ Consultez le fichier [LICENSE](LICENSE).
 - L'héberger vous-même : c'est la meilleure solution. De plus, vous avez un contrôle total.
 
 ### Une fonctionnalité manque ?
-Ouvrez une [issue](https://github.com/Creatif-France-Games/nexus-bot/issues) ou proposez une Pull Request !
+Ouvrez une [issue](https://github.com/Nexus-Bot-Developement/nexus-bot/issues) ou proposez une Pull Request !
 
 ---
 
