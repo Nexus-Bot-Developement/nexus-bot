@@ -873,6 +873,12 @@ async def ajouter_membre_salon(interaction: discord.Interaction, salon_id: int, 
 
 @tree.command(name="securisation", description="Active la sécurisation temporaire du serveur")
 @app_commands.describe(duree="Durée en minutes")
+@app_commands.default_permissions(administrator=True)  # Restreint aux administrateurs
+async def maintenance(interaction: discord.Interaction, duree: int, raison: str):
+    # Vérifie si l'utilisateur est un administrateur
+    if not interaction.user.guild_permissions.administrator:
+        await interaction.response.send_message("❌ Vous n'avez pas la permission d'utiliser cette commande.", ephemeral=True)
+        return
 async def securisation(interaction: discord.Interaction, duree: int):
     global secure_mode
     if secure_mode:
@@ -917,7 +923,14 @@ async def securisation_fin_auto(guild: discord.Guild):
 
 @tree.command(name="maintenance", description="Active le mode maintenance")
 @app_commands.describe(duree="Durée en minutes", raison="Raison de la maintenance")
+@app_commands.default_permissions(administrator=True)  # Restreint aux administrateurs
 async def maintenance(interaction: discord.Interaction, duree: int, raison: str):
+    # Vérifie si l'utilisateur est un administrateur
+    if not interaction.user.guild_permissions.administrator:
+        await interaction.response.send_message("❌ Vous n'avez pas la permission d'utiliser cette commande.", ephemeral=True)
+        return
+
+    # Désactive l'envoi de messages pour tous les salons textuels
     for channel in interaction.guild.text_channels:
         overwrite = channel.overwrites_for(interaction.guild.default_role)
         overwrite.send_messages = False
@@ -927,12 +940,12 @@ async def maintenance(interaction: discord.Interaction, duree: int, raison: str)
     await interaction.response.send_message(f"Maintenance activée pour {duree} minutes", ephemeral=True)
     await asyncio.sleep(duree * 60)
 
+    # Réactive l'envoi de messages pour tous les salons textuels
     for channel in interaction.guild.text_channels:
         overwrite = channel.overwrites_for(interaction.guild.default_role)
         overwrite.send_messages = True
         await channel.set_permissions(interaction.guild.default_role, overwrite=overwrite)
         await channel.send("✅ Fin de la maintenance. Merci de votre patience !")
-
 # Supprimer la commande si elle existe déjà
 if bot.tree.get_command('nouvel_article'):
     bot.tree.remove_command('nouvel_article')
